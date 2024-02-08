@@ -1,5 +1,3 @@
-<ul align="center">
-  
 ![middle](https://capsule-render.vercel.app/api?type=cylinder&color=0147FF&height=150&section=header&text=Wassup&fontColor=FFFFFF&fontSize=70&animation=fadeIn&fontAlignY=55)
 ### PROJECT
 
