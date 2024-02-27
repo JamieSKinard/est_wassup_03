@@ -47,7 +47,7 @@ def main(args):
     
     
     # Train and evaluate the model
-    model, train_hist, val_hist, best_acc = train_model(model, dataloaders_dict, criterion, optimizer_ft, scheduler, device,model_folder=model_folder, batch_size=args.batch_size, num_epochs=args.num_epochs, is_inception=False, train_name = args.train_name, val_name = args.val_name)
+    model, train_hist, val_hist, best_acc, _ , _ = train_model(model, dataloaders_dict, criterion, optimizer_ft, scheduler, device,model_folder=model_folder, batch_size=args.batch_size, num_epochs=args.num_epochs, is_inception=False, train_name = args.train_name, val_name = args.val_name)
 
     # Save the trained model
     torch.save(model.state_dict(), model_file)
