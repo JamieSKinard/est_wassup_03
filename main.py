@@ -9,6 +9,9 @@ from train import train_model
 def main(args):
     # GPU settings
     os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"  # Arrange GPU devices starting from 0
+    if args.gpu is not None:
+        torch.cuda.set_device(args.gpu)
+        args.num_device = str(args.gpu) 
     os.environ["CUDA_VISIBLE_DEVICES"]= args.num_device  # Set the GPUs 2 and 3 to use
     device = torch.device(args.device)
     print('Device:', device)
@@ -77,6 +80,7 @@ if __name__ == "__main__":
     parser.add_argument('--eps', type=float, default=1e-8, help='Epsilon for Adam optimizer (default: 1e-8)')
     parser.add_argument('-a', '--alpha', type=float, default=0.99, help='Alpha for RMSprop optimizer (default: 0.99)')
     parser.add_argument('-mn', '--model-name', type=str, default='Repvgg', choices=['Repvgg', 'VIT'],help='Chocie model [Repvgg, VIT]')
+    parser.add_argument('--gpu', default=0, type=int, help='GPU id to use')
     
     args = parser.parse_args()
     main(args)
