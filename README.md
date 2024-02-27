@@ -32,7 +32,7 @@ conda env create -f env.yaml
 python preprocess/preprocess.py --data-dir {your_data_path}
 ```
 
-### How to 2Stage Model Learn
+### How to Learn(2Stage Model)
 ```bash
 python main.py --data-dir {your_data_path}
 ### Check defult
@@ -40,7 +40,8 @@ python main.py --data-dir {your_data_path}
 python main.py -mn VIT --data-dir {your_data_path}
 ```
 
-### How to 1Stage Model Learn
+### How to Learn(1Stage Model)
+pass
 
 
 
