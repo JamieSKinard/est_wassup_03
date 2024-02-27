@@ -32,7 +32,7 @@ def train_model(model, dataloaders, criterion, optimizer, lr_scheduler, device, 
     best_acc = best_acc
     
     # tqdm을 사용하여 진행 상황 시각화
-    for epoch in tqdm(range(num_epochs)):
+    for epoch in range(num_epochs):
         epoch_since = time.time()
         print(f'Epoch {epoch + 1}/{num_epochs}')
         print('-' * 12)
@@ -69,7 +69,7 @@ def train_model(model, dataloaders, criterion, optimizer, lr_scheduler, device, 
                     if phase == train_name:
                         loss.backward()
                         optimizer.step()
-
+                
                 running_loss += loss.item() * inputs.size(0)
                 running_corrects += torch.sum(preds == labels.data)
 
