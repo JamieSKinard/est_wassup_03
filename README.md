@@ -4,8 +4,8 @@
 ### Team
 - [HyunJun Kang](https://github.com/)
 - [DoYeon Kim](https://github.com/electronicguy97)
-- [Jongseong Kim](https://github.com/)
-- [채욱 이](https://github.com/)
+- [Jongseong Kim](https://github.com/JamieSKinard)
+- [Chaewook Lee](https://github.com/)
 - [HaNeul Pyeon](https://github.com/)
 
 ### 실험보고서
