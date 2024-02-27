@@ -29,8 +29,10 @@ conda env create -f env.yaml
 
 ### How to Pretreatment
 ```bash
+# check default path
 python preprocess/preprocess.py --data-dir {your_data_path}
 ```
+Create a cropped photo after face recognition with the yolo8n-face model
 
 ### How to Learn(2Stage Model)
 ```bash
