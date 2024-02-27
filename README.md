@@ -21,6 +21,10 @@ cd est_wassup_03
 pip install -r requirements.txt
 pip install -e .
 ```
+or
+```bash
+conda env create -f env.yaml
+```
 
 ### How to Pretreatment
 ```bash
