@@ -23,6 +23,7 @@ pip install -e .
 ```
 or
 ```bash
+# using conda
 conda env create -f env.yaml
 ```
 
