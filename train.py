@@ -5,7 +5,8 @@ import sys
 import os
 from utils.utils import save_history
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, r2_score
-from tqdm import tqdm  # tqdm 임포트
+from tqdm import tqdm
+from torch.optim.lr_scheduler import CosineAnnealingLR
 
 def train_model(model, dataloaders, criterion, optimizer, lr_scheduler, device, train_name, val_name, batch_size=32, num_epochs=25, is_inception=False,
                 is_loaded=False, load_state_ws=None, model_folder="", best_acc=0.0):
@@ -31,7 +32,6 @@ def train_model(model, dataloaders, criterion, optimizer, lr_scheduler, device, 
     best_model_wts = copy.deepcopy(model.state_dict())
     best_acc = best_acc
     
-    # tqdm을 사용하여 진행 상황 시각화
     for epoch in range(num_epochs):
         epoch_since = time.time()
         print(f'Epoch {epoch + 1}/{num_epochs}')
@@ -51,7 +51,7 @@ def train_model(model, dataloaders, criterion, optimizer, lr_scheduler, device, 
 
             dl = dataloaders[phase]
             totalIm = 0
-            for inputs, labels in tqdm(dl):  # tqdm으로 데이터로더 루프를 감싸어 진행 상황 시각화
+            for inputs, labels in tqdm(dl):
                 totalIm += len(inputs)
                 inputs = inputs.to(device)
                 labels = labels.to(device)
@@ -104,7 +104,8 @@ def train_model(model, dataloaders, criterion, optimizer, lr_scheduler, device, 
                 best_model_wts = copy.deepcopy(model.state_dict())
 
         if lr_scheduler:
-            lr_scheduler.step()
+            for param_group in optimizer.param_groups:
+                lr_scheduler.step()
         lr = optimizer.param_groups[0]['lr']
         interval_epoch = time.time() - epoch_since
         print(f'Epoch {epoch + 1} complete in {interval_epoch // 60:.0f}m {interval_epoch % 60:.0f}s with a learning rate of {lr}')
