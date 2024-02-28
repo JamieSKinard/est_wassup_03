@@ -75,3 +75,6 @@ test 할 때 사용할 데이터 경로 설정 후 학습 시켰던 모델과 �
 
 
 <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white"> <img src = "https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+<a href="https://code.visualstudio.com/" onClick=""><img src="https://img.shields.io/badge/VSC-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/></a>
+<a href="https://www.linux.org/" onClick=""><img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=Linux&logoColor=white"/></a>
+<a href="https://git-scm.com/" onClick=""><img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white"/></a>
