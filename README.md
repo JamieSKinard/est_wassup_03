@@ -1,5 +1,4 @@
 ![middle](https://capsule-render.vercel.app/api?type=cylinder&color=0147FF&height=150&section=header&text=Wassup&fontColor=FFFFFF&fontSize=70&animation=fadeIn&fontAlignY=55)
-### PROJECT
 
 ### Team
 - [DoYeon Kim](https://github.com/electronicguy97) - Team Leader
@@ -8,8 +7,17 @@
 - [Chaewook Lee](https://github.com/leecw12)
 - [HaNeul Pyeon](https://github.com/Haneul1002)
 
-### 실험보고서
-|실험보고서|발표자료|
+### PROJECT
+We started with 500,000 pieces of data.
+It has 7 classes: happy, anger, anxiety, embarrass, normal, pain, and sad.
+As preprocessing, we reduced the number of data or used YOLOv8 to crop only the faces. Cropped photos to reduce storage capacity to use less GPU
+Repvgg and VIT (Vision Transformer, YOLO) were used as 2-stage models, and YOLO was used as 1-stage model.
+We have implemented many functions using Streamlit, so please check it out.
+
+![image](https://github.com/electronicguy97/est_wassup_03/assets/103613730/41417652-dea9-4123-a3d9-5332af6f4bc6)
+
+### experiment report
+|experiment report|presentation|
 |---|---|
 |||
 |||
@@ -39,12 +47,18 @@ Create a cropped photo after face recognition with the yolo8n-face model
 python main.py --data-dir {your_data_path}
 ### Check defult
 ### Change model -> choice(defalut = RepVGG, VIT)
-python main.py -mn VIT --data-dir {your_data_path}
+python main.py -mn VIT --data-dir {your_data_path} -mp {your_model} -mn {Reppvgg or VIT}
 ```
+Saved in Models folder/{your_choice_model}
 
 ### How to Learn(1Stage Model)
-pass
+Preprocessing is possible with box_labeling_yolov8.ipynb in the folder called preprocess.
+and Go to the file named YOLO.ipynb and Just Shift + F5
 
-
+### How to evaluation
+```bash
+python eval.py --data-dir {your_test_folder_path}
+```
+We used f1, R2, Precision, and recall as metrics.
 
 <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white"> <img src = "https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
