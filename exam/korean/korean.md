@@ -1,11 +1,11 @@
 ![middle](https://capsule-render.vercel.app/api?type=cylinder&color=0147FF&height=150&section=header&text=Wassup&fontColor=FFFFFF&fontSize=70&animation=fadeIn&fontAlignY=55)
 
 ### Team
-- [DoYeon Kim](https://github.com/electronicguy97) - Team Leader
-- [HyunJun Kang](https://github.com/)
-- [Jongseong Kim](https://github.com/JamieSKinard)
-- [Chaewook Lee](https://github.com/leecw12)
-- [HaNeul Pyeon](https://github.com/Haneul1002)
+- [김도연](https://github.com/electronicguy97) - Team Leader
+- [강현준](https://github.com/)
+- [김종성](https://github.com/JamieSKinard)
+- [이채](https://github.com/leecw12)
+- [편하늘](https://github.com/Haneul1002)
 
 ### PROJECT
 저희는 50만건의 동양인 감정을 사용했습니다.<br>
