@@ -43,11 +43,11 @@ def main(args):
         optimizer_ft = optim.SGD(model.parameters(), lr=args.learning_rate, momentum=args.momentum)
     elif args.optimizer == "RMSprop":
         optimizer_ft = optim.RMSprop(model.parameters(), lr=args.learning_rate, alpha=args.alpha)
-    scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=args.step_size, gamma=args.gamma)
+    scheduler = lr_scheduler.CosineAnnealingLR(optimizer_ft, T_max=args.num_epochs)
     
     
     # Train and evaluate the model
-    model, train_hist, val_hist, best_acc = train_model(model, dataloaders_dict, criterion, optimizer_ft, scheduler, device,model_folder=model_folder, batch_size=args.batch_size, num_epochs=args.num_epochs, is_inception=False, train_name = args.train_name, val_name = args.val_name)
+    model, train_hist, val_hist, best_acc, _ , _ = train_model(model, dataloaders_dict, criterion, optimizer_ft, scheduler, device,model_folder=model_folder, batch_size=args.batch_size, num_epochs=args.num_epochs, is_inception=False, train_name = args.train_name, val_name = args.val_name)
 
     # Save the trained model
     torch.save(model.state_dict(), model_file)
@@ -67,8 +67,8 @@ if __name__ == "__main__":
     parser.add_argument("--device", type=str, default="cuda", choices=["cuda", "cpu"], help="Device to use (cuda or cpu)")
     parser.add_argument("--base-dir", type=str, default="./Models", help="Base directory path for model saving")
     parser.add_argument('-m',"--momentum", type=float, default=0.9, help="Momentum")
-    parser.add_argument("--step-size", type=int, default=10, help="Step size for scheduler")
-    parser.add_argument('-g',"--gamma", type=float, default=0.1, help="Gamma value for scheduler")
+    # parser.add_argument("--step-size", type=int, default=10, help="Step size for scheduler")
+    # parser.add_argument('-g',"--gamma", type=float, default=0.1, help="Gamma value for scheduler")
     parser.add_argument('-e',"--num-epochs", type=int, default=30, help="Number of training epochs")
     parser.add_argument("--num-device", type=str, default='0', help="Number of Using GPU Device")
     parser.add_argument('-tn',"--train-name", type=str, default='train', help="train folder name")

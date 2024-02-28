@@ -64,7 +64,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Crop faces from images using YOLO model")
     parser.add_argument('-d',"--device", type=str, default="cuda", choices=["cuda", "cpu"], help="Device to use (cuda or cpu)")
-    parser.add_argument('-w',"--weights", type=str, default="weights/yolov8n-face.pt", help="Path to YOLO weights file")
+    parser.add_argument('-w',"--weights", type=str, default="../weights/yolov8n-face.pt", help="Path to YOLO weights file")
     parser.add_argument("--data-dir", type=str, default="../../../data/image", help="Data directory path")
     parser.add_argument('-o',"--output-dir", type=str, default="crop", help="Output directory path for cropped images")
     args = parser.parse_args()
