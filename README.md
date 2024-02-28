@@ -17,9 +17,9 @@ We have implemented many functions using Streamlit, so please check it out.<br>
 ![image](https://github.com/electronicguy97/est_wassup_03/assets/103613730/41417652-dea9-4123-a3d9-5332af6f4bc6)
 
 ### USED
-GPU server : 4GPU A-100s(AWS)
-OS : Linux
-Language : Python
+GPU server : 4GPU A-100s(AWS)<br>
+OS : Linux<br>
+Language : Python<br>
 
 ### experiment report
 |experiment report|presentation|
@@ -57,7 +57,7 @@ python main.py -mn VIT --data-dir {your_data_path} -mp {your_model} -mn {Reppvgg
 History and model aved in Models folder/{your_choice_model}
 
 ### How to Learn(1Stage Model)
-Preprocessing is possible with box_labeling_yolov8.ipynb in the folder called preprocess.
+Preprocessing is possible with box_labeling_yolov8.ipynb in the folder called preprocess.<br>
 and Go to the file named YOLO.ipynb and Just Shift + F5
 
 ### How to evaluation
