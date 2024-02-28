@@ -1,5 +1,7 @@
 ![middle](https://capsule-render.vercel.app/api?type=cylinder&color=0147FF&height=150&section=header&text=Wassup&fontColor=FFFFFF&fontSize=70&animation=fadeIn&fontAlignY=55)
-[한국어 Readme](https://github.com/electronicguy97/est_wassup_03/edit/main/exam/korean/korean.md)
+### Language
+[한국어 Readme](https://github.com/electronicguy97/est_wassup_03/blob/main/exam/korean/korean.md)
+
 ### Team
 - [DoYeon Kim](https://github.com/electronicguy97) - Team Leader
 - [HyunJun Kang](https://github.com/)
