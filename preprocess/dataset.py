@@ -11,9 +11,7 @@ class CustomDataset(torch.utils.data.Dataset):
         self.load_images()
 
     def load_images(self):
-        problematic_images = []
-        image_files = []
-        total_image_files = []
+        problematic_images = []  # Store paths of problematic images
 
         # Loop over the directories and subdirectories in the root directory
         for class_name in os.listdir(self.root_dir):
@@ -22,29 +20,20 @@ class CustomDataset(torch.utils.data.Dataset):
                 continue
 
             # Loop over the files in each subdirectory
-            for filename in os.listdir(class_dir):
+            for filename in tqdm(os.listdir(class_dir), desc="Loading images", unit="image"):
                 if filename.endswith('.jpg'):
-                    image_files.append(os.path.join(class_dir, filename))
-
-        total_image_files.extend(image_files)
-
-        # Use tqdm to display progress bar while loading images
-        with tqdm(total=len(total_image_files), desc="Loading images", unit='image') as pbar:
-            # Loop over the image files
-            for img_path in total_image_files:
-                try:
-                    # Open each image file
-                    with Image.open(img_path) as img:
-                        if self.transform:
-                            img = self.transform(img)
-                        # Add image path, class label, and class name to lists
-                        class_name = os.path.basename(os.path.dirname(img_path))
-                        label = self.get_label(class_name)
-                        self.samples.append((img_path, label))
-                except Exception as e:
-                    print(f"Skipping problematic image: {img_path}")
-                    problematic_images.append(img_path)
-                pbar.update(1)
+                    img_path = os.path.join(class_dir, filename)
+                    try:
+                        # Open each image file
+                        with Image.open(img_path) as img:
+                            if self.transform:
+                                img = self.transform(img)
+                            # Add image path, class label, and class name to lists
+                            label = self.get_label(class_name)
+                            self.samples.append((img_path, label))
+                    except Exception as e:
+                        print(f"Skipping problematic image: {img_path}")
+                        problematic_images.append(img_path)
 
         # Remove problematic images from the dataset
         for img_path in problematic_images:
