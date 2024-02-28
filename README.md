@@ -1,5 +1,5 @@
 ![middle](https://capsule-render.vercel.app/api?type=cylinder&color=0147FF&height=150&section=header&text=Wassup&fontColor=FFFFFF&fontSize=70&animation=fadeIn&fontAlignY=55)
-
+[한국어 Readme](https://github.com/electronicguy97/est_wassup_03/edit/main/exam/korean/korean.md)
 ### Team
 - [DoYeon Kim](https://github.com/electronicguy97) - Team Leader
 - [HyunJun Kang](https://github.com/)
@@ -7,8 +7,8 @@
 - [Chaewook Lee](https://github.com/leecw12)
 - [HaNeul Pyeon](https://github.com/Haneul1002)
 
-### 실험보고서
-|실험보고서|발표자료|
+### Experiment Report
+|Experiment Report|Presentation Materials|
 |---|---|
 |[결과 보고서.pdf](https://github.com/electronicguy97/est_wassup_03/files/14435573/default.pdf)||
 |[결과 보고서.docx](https://github.com/electronicguy97/est_wassup_03/files/14435574/default.docx)||
