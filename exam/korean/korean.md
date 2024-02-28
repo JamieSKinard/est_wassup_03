@@ -8,26 +8,25 @@
 - [HaNeul Pyeon](https://github.com/Haneul1002)
 
 ### PROJECT
-We started with 500,000 pieces of data.<br>
-It has 7 classes: happy, anger, anxiety, embarrass, normal, pain, and sad.<br>
-As preprocessing, we reduced the number of data or used YOLOv8 to crop only the faces. Cropped photos to reduce storage capacity to use less GPU<br>
-Repvgg and VIT (Vision Transformer, YOLO) were used as 2-stage models, and YOLO was used as 1-stage model.<br>
-We have implemented many functions using Streamlit, so please check it out.<br>
+저희는 50만건의 동양인 감정을 사용했습니다.<br>
+행복, 화남, 불안, 당황, 평시, 아픔, 슬픔 총 7가지의 감정을 활용했습니다.<br>
+전처리로는 YOLOv8-face를 사용하여 얼굴만 잘라 사용하여 정확도와 학습시간을 얻었습니다.<br>
+2-stage 모델로는 Repvgg, VIT(Vision Transformer)와 YOLO를 사용했고, 1-stage 모델로는 YOLO 사용했습니다.<br>
+Streamlit으로도 여러기능을 만들었으니 구경해주세요.<br>
 
 ![image](https://github.com/electronicguy97/est_wassup_03/assets/103613730/41417652-dea9-4123-a3d9-5332af6f4bc6)
 
-### USED
-GPU server : 4GPU A-100s(AWS)
+### 장비
+GPU server : A-100 4대(AWS)
 OS : Linux
 Language : Python
 
-### experiment report
-|experiment report|presentation|
+### 실험보고서
+|실험보고서|발표자료|
 |---|---|
-|[결과 보고서.pdf](https://github.com/electronicguy97/est_wassup_03/files/14435573/default.pdf)||
-|[결과 보고서.docx](https://github.com/electronicguy97/est_wassup_03/files/14435574/default.docx)||
+|||
 
-### How to Install
+### 사용 패키지 설치방법
 ```bash
 git clone https://github.com/JamieSKinard/est_wassup_03.git
 cd est_wassup_03
@@ -40,33 +39,33 @@ or
 conda env create -f env.yaml
 ```
 
-### How to Pretreatment
+### 전처리방법
 ```bash
 # check default path
 python preprocess/preprocess.py --data-dir {your_data_path}
 ```
-Create a cropped photo after face recognition with the yolo8n-face model
+YOLOv8-face모델을 사용해서 BBOX기준 얼굴 부분만 잘라서 새로운 위치에 데이터를 생성합니다. 이것을 통해서 사진의 크기를 줄여 학습시간을 단축 시킬 수 있습니다.
 
-### How to Learn(2Stage Model)
+### 2Stage Model(RepVgg, VIT, YOLO) 사용방법
 ```bash
 python main.py --data-dir {your_data_path}
 ### Check defult
 ### Change model -> choice(defalut = RepVGG, VIT)
 python main.py -mn VIT --data-dir {your_data_path} -mp {your_model} -mn {Reppvgg or VIT}
 ```
-History and model aved in Models folder/{your_choice_model}
+결과와 모델은 Models(defalut)/{선택모델} 안에 들어 있습니다.
 
-### How to Learn(1Stage Model)
-Preprocessing is possible with box_labeling_yolov8.ipynb in the folder called preprocess.
-and Go to the file named YOLO.ipynb and Just Shift + F5
+### YOLO(1 Stage) 사용방법
+디렉토리에서 box_labeling_yolov8.ipynb를 통해 BBOX Label이 가능합니다. 하셨다면 YOLO.ipynb에서 진행하시면 됩니다.
 
-### How to evaluation
+### 평가방법
 ```bash
 python eval.py --data-dir {your_test_folder_path} -mp {your_model_path} -mn {Repvgg, VIT}
 ```
-We used f1, R2, Precision, and recall as metrics.
+test 할 때 사용할 데이터 경로 설정 후 학습 시켰던 모델과 경로를 설정하시면 됩니다.
+평가지표로는 f1, R2, Precision, recall 사용했습니다.
 
-### result
+### 결과
 ||YOLO(1Stage)|YOLO(2Stage)|ReppVgg|VIT|
 |---|---|---|---|---|
 |val_loss|0.233|0.533|1.470|1.251|
