@@ -23,7 +23,7 @@ def evaluate_model(model, dataloader, device):
             correct_predictions += (predicted == labels).sum().item()
 
     accuracy = correct_predictions / total_predictions
-    print(f"Accuracy: {accuracy:.4f}")
+    print(f"Validation Accuracy: {accuracy:.4f}")  # 수정: 정확도 출력 메시지 수정
 
 def main(args):
     # Device configuration
@@ -44,7 +44,10 @@ def main(args):
     val_dataloader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers)
 
     # Load the model
-    model = create_model(args.model_name, args.num_workers)  # Adjust this based on your model architecture
+    if args.model_name == 'VIT':
+        model = create_model(args.model_name, args.num_workers)  # VIT 모델의 경우에만 create_model 호출
+    else:
+        raise ValueError("Unsupported model name")  # Repvgg 모델의 경우 현재 지원하지 않음
     model.load_state_dict(torch.load(args.model_path))
     model.to(device)
 
@@ -53,11 +56,11 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluation of RepVGG model")
-    parser.add_argument("--data-dir", type=str, default="../../../data/test_set", help="Data directory path")
+    parser.add_argument("--data-dir", type=str, default="../../../data/test", help="Data directory path")
     parser.add_argument("--batch-size", type=int, default=32, help="Batch size")
     parser.add_argument("--num-workers", type=int, default=7, help="Number of workers for data loader")
     parser.add_argument("--device", type=str, default="cuda", choices=["cuda", "cpu"], help="Device to use (cuda or cpu)")
-    parser.add_argument('-mp',"--model-path", type=str, required=True, help="Path to the trained model")
-    parser.add_argument('-mn', '--model-name', type=str, required=True, choices=['Repvgg', 'VIT'],help='Chocie model [Repvgg, VIT]')
+    parser.add_argument('-mp', "--model-path", type=str, required=True, help="Path to the trained model")
+    parser.add_argument('-mn', '--model-name', type=str, required=True, choices=['VIT'], help='Choice model [VIT]')
     args = parser.parse_args()
     main(args)
