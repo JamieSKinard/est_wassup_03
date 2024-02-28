@@ -1,4 +1,7 @@
-checkpoint*.pt
+### folder ###
+/Models/*
+/runs/*
+/dino_detection_yolov8/*
 # Created by https://www.toptal.com/developers/gitignore/api/linux,python,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,python,visualstudiocode
 
