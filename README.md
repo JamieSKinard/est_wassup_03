@@ -57,7 +57,7 @@ and Go to the file named YOLO.ipynb and Just Shift + F5
 
 ### How to evaluation
 ```bash
-python eval.py --data-dir {your_test_folder_path}
+python eval.py --data-dir {your_test_folder_path} -mp {your_model_path} -mn {Repvgg, VIT}
 ```
 We used f1, R2, Precision, and recall as metrics.
 
