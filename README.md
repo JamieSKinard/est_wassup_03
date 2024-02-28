@@ -17,15 +17,15 @@ We have implemented many functions using Streamlit, so please check it out.<br>
 ![image](https://github.com/electronicguy97/est_wassup_03/assets/103613730/41417652-dea9-4123-a3d9-5332af6f4bc6)
 
 ### USED
-GPU server : 4 A-100s(AWS)
+GPU server : 4GPU A-100s(AWS)
 OS : Linux
 Language : Python
 
 ### experiment report
 |experiment report|presentation|
 |---|---|
-|||
-|||
+|[결과 보고서.pdf](https://github.com/electronicguy97/est_wassup_03/files/14435573/default.pdf)||
+|[결과 보고서.docx](https://github.com/electronicguy97/est_wassup_03/files/14435574/default.docx)||
 
 ### How to Install
 ```bash
