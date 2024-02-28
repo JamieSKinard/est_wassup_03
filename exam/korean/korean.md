@@ -67,6 +67,9 @@ test 할 때 사용할 데이터 경로 설정 후 학습 시켰던 모델과 �
 평가지표로는 f1, R2, Precision, recall 사용했습니다.
 
 ### 결과
+
+![image](https://github.com/electronicguy97/est_wassup_03/assets/103613730/1612b875-4c66-42f6-9eef-50566270eb37)
+
 ||YOLO(1Stage)|YOLO(2Stage)|ReppVgg|VIT|
 |---|---|---|---|---|
 |val_loss|0.233|0.533|1.470|1.251|
