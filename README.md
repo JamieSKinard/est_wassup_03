@@ -60,6 +60,7 @@ We used f1, R2, Precision, and recall as metrics.
 |val_loss|0.233|0.533|1.470|1.251|
 |train_acc|||78.3%|72.2%|
 |val_acc||73.9%|68.7%|62.5%|
+
 Preprocessing is possible with box_labeling_yolov8.ipynb in the folder called preprocess.<br>
 and Go to the file named YOLO.ipynb and Just Shift + F5
 
