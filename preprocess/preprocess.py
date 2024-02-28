@@ -47,17 +47,17 @@ def main(args):
     os.makedirs(output_dir_train, exist_ok=True)
     os.makedirs(output_dir_val, exist_ok=True)
 
-    # Process train_test images
-    train_test_dir = os.path.join(args.data_dir, 'train_test')
-    image_files_train = get_image_files(train_test_dir)
-    for image_path in tqdm(image_files_train, desc='Processing train_test images'):
+    # Process train images
+    train_dir = os.path.join(args.data_dir, 'train')
+    image_files_train = get_image_files(train_dir)
+    for image_path in tqdm(image_files_train, desc='Processing train images'):
         crop_faces(image_path, output_dir_train)
         clear_output(wait=True)
 
-    # Process val_test images
-    val_test_dir = os.path.join(args.data_dir, 'val_test')
-    image_files_val = get_image_files(val_test_dir)
-    for image_path in tqdm(image_files_val, desc='Processing val_test images'):
+    # Process val images
+    val_dir = os.path.join(args.data_dir, 'val')
+    image_files_val = get_image_files(val_dir)
+    for image_path in tqdm(image_files_val, desc='Processing val images'):
         crop_faces(image_path, output_dir_val)
         clear_output(wait=True)
 
