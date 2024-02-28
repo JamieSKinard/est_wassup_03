@@ -2,6 +2,13 @@
 ### Language
 [한국어 Readme](https://github.com/electronicguy97/est_wassup_03/blob/main/exam/korean/korean.md)
 
+### Project
+We used 500,000 Asian amounts.<br>
+A total of 7 emotions were used: happy, angry, anxious, peaceful, pain, and sad.<br>
+We used YOLOv8-face as a preprocessing method to cut out only the face to save manpower and learning time.<br>
+Repvgg, VIT (Vision Transformer), and YOLO were used as 2-stage models, and YOLO was used as 1-stage model.<br>
+Streamlit adds various new features.<br>
+ 
 ### Team
 - [DoYeon Kim](https://github.com/electronicguy97) - Team Leader
 - [HyunJun Kang](https://github.com/)
