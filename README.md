@@ -17,9 +17,9 @@ We have implemented many functions using Streamlit, so please check it out.<br>
 ![image](https://github.com/electronicguy97/est_wassup_03/assets/103613730/41417652-dea9-4123-a3d9-5332af6f4bc6)
 
 ### USED
-GPU server : 4GPU A-100s(AWS)<br>
-OS : Linux<br>
-Language : Python<br>
+- GPU server : 4GPU A-100s(AWS)<br>
+- OS : Linux<br>
+- Language : Python<br>
 
 ### experiment report
 |experiment report|presentation|
