@@ -49,7 +49,7 @@ python main.py --data-dir {your_data_path}
 ### Change model -> choice(defalut = RepVGG, VIT)
 python main.py -mn VIT --data-dir {your_data_path} -mp {your_model} -mn {Reppvgg or VIT}
 ```
-Saved in Models folder/{your_choice_model}
+History and model aved in Models folder/{your_choice_model}
 
 ### How to Learn(1Stage Model)
 Preprocessing is possible with box_labeling_yolov8.ipynb in the folder called preprocess.
