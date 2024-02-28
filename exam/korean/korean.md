@@ -4,7 +4,7 @@
 - [김도연](https://github.com/electronicguy97) - Team Leader
 - [강현준](https://github.com/)
 - [김종성](https://github.com/JamieSKinard)
-- [이채](https://github.com/leecw12)
+- [이채욱](https://github.com/leecw12)
 - [편하늘](https://github.com/Haneul1002)
 
 ### PROJECT
