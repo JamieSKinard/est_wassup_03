@@ -117,6 +117,8 @@ def play_youtube_video(conf, model):
 def play_webcam(conf, model):
     source_webcam = settings.WEBCAM_PATH
     is_display_tracker, tracker = display_tracker_options()
+    print('webcam: is_dis',is_display_tracker)
+    print('webcam: tracker',tracker)
     
     vid_cap = cv2.VideoCapture(source_webcam)
         
