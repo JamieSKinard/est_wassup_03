@@ -85,6 +85,7 @@ We used f1, R2, Precision, and recall as metrics.
 ![image](https://github.com/JamieSKinard/est_wassup_03/assets/103613730/3a7145fb-6e0c-4cc2-880c-9da0bf5c71f9)
 
 
+
 <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white"> <img src = "https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
 <a href="https://code.visualstudio.com/" onClick=""><img src="https://img.shields.io/badge/VSC-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/></a>
 <a href="https://www.linux.org/" onClick=""><img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=Linux&logoColor=white"/></a>
