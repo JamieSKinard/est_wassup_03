@@ -24,8 +24,8 @@ Language : Python
 ### 실험보고서
 |실험보고서|발표자료|
 |---|---|
-|[결과 보고서.pdf](https://github.com/electronicguy97/est_wassup_03/files/14435799/default.pdf)|[감정AI발표자료.pdf](https://github.com/electronicguy97/est_wassup_03/files/14441173/AI.pdf)|
-|[결과 보고서.docx](https://github.com/electronicguy97/est_wassup_03/files/14435795/default.docx)||
+|[결과보고서.docx](https://github.com/electronicguy97/est_wassup_03/files/14441413/default.docx)|[감정AI발표자료.pdf](https://github.com/electronicguy97/est_wassup_03/files/14441417/AI.pdf)|
+|[결과보고서.docx](https://github.com/electronicguy97/est_wassup_03/files/14441418/default.docx)||
 
 ### 사용 패키지 설치방법
 ```bash
