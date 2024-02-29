@@ -4,10 +4,13 @@ import PIL
 
 # External packages
 import streamlit as st
-
+import torch
 # Local Modules
-import utils.settings
-import utils.helper
+import settings
+import helper
+import streamlit as st
+import google.generativeai as genai
+
 
 # Setting page layout
 st.set_page_config(
@@ -51,13 +54,11 @@ st.sidebar.header("Image/Video Config")
 source_radio = st.sidebar.radio(
     "Select Source", settings.SOURCES_LIST)
 
-
-
 source_img = None
 if source_radio == settings.IMAGE:
     source_img = st.camera_input("Take a picture")
 
-    with st.spinner("Processing image..."):  # 처리 중임을 표시
+    with st.spinner("Processing image..."):
         try:
             uploaded_image = PIL.Image.open(source_img)
             res = model.predict(uploaded_image, conf=confidence)
@@ -65,9 +66,27 @@ if source_radio == settings.IMAGE:
             res_plotted = res[0].plot()[:, :, ::-1]
             st.image(res_plotted, caption='Detected Image', use_column_width=True)
             try:
-                with st.expander("Detection Results"):
-                    for box in boxes:
-                        st.write(box.data)
+                for box in boxes:
+                    # Extract predicted class names
+                    predicted_class_names = res[0].names
+                    # Get the class name corresponding to the index 1
+                    class_label = box.data[0][5].item()
+                    predicted_class = predicted_class_names[class_label]
+                    
+                    # Modify prompt generation here
+                    prompt_with_food = predicted_class + "할 때 먹는 음식"
+                    
+                    # Generate response with modified prompt
+                    model = genai.GenerativeModel("gemini-pro")
+                    response = model.generate_content(prompt_with_food)
+
+                    # Display response
+                    st.write("")
+                    st.header(":blue[Just Try It!]")
+                    st.write("")
+                    st.write(predicted_class,'하시군요!')
+                    st.markdown(response.text)
+                    
             except Exception as ex:
                 st.write("Error occurred while processing detection results.")
                 st.error(ex)
@@ -81,25 +100,16 @@ elif source_radio == settings.VIDEO:
 elif source_radio == settings.WEBCAM:
     helper.play_webcam(confidence, model)
 
-# elif source_radio == settings.RTSP:
-#     helper.play_rtsp_stream(confidence, model)
-
 elif source_radio == settings.YOUTUBE:
     helper.play_youtube_video(confidence, model)
 
 else:
     st.error("Please select a valid source type!")
 
-
-
-import streamlit as st
-import google.generativeai as genai
-
+# st.image("/Users/chaewooklee/Desktop/streamlit/work/streamlit/images/Google-Gemini-AI-Logo.png", width=200)
 # Sidebar에 API 키 입력
 API_KEY = st.sidebar.text_input("Enter Google API Key", type="password")
 genai.configure(api_key=API_KEY)
-
-st.image("/Users/chaewooklee/Desktop/streamlit/work/streamlit/images/Google-Gemini-AI-Logo.png", width=200)
 st.write("for your food")
 
 gemini_pro = st.container()
@@ -114,14 +124,12 @@ def main():
 
         # 사용자가 SEND 버튼을 눌렀을 때의 동작
         if st.button("SEND", use_container_width=True):
-            # 입력된 prompt 뒤에 "할 때 먹는 음식"을 추가
-            prompt_with_food = prompt + "할 때 먹는 음식"
-
+            # 입력된 prompt 뒤에 "할 때 먹는 음식"을 추가"
             # Gemini Pro 모델 생성
             model = genai.GenerativeModel("gemini-pro")
 
             # 추가된 텍스트를 포함한 prompt로 content를 생성하고 응답을 받음
-            response = model.generate_content(prompt_with_food)
+            response = model.generate_content(prompt)
 
             # 응답을 출력
             st.write("")

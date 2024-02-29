@@ -1,4 +1,19 @@
 ![middle](https://capsule-render.vercel.app/api?type=cylinder&color=0147FF&height=150&section=header&text=Wassup&fontColor=FFFFFF&fontSize=70&animation=fadeIn&fontAlignY=55)
+### Language
+[한국어 Readme](https://github.com/electronicguy97/est_wassup_03/blob/main/exam/korean/korean.md)
+
+### Project
+We used 500,000 Asian amounts.<br>
+A total of 7 emotions were used: happy, angry, anxious, peaceful, pain, and sad.<br>
+We used YOLOv8-face as a preprocessing method to cut out only the face to save manpower and learning time.<br>
+Repvgg, VIT (Vision Transformer), and YOLO were used as 2-stage models, and YOLO was used as 1-stage model.<br>
+Streamlit adds various new features.<br>
+![image](https://github.com/electronicguy97/est_wassup_03/assets/103613730/41417652-dea9-4123-a3d9-5332af6f4bc6)
+
+### Use
+GPU server : 4GPU A-100 (AWS)
+OS : Linux
+Language : Python
 
 ### Team
 - [DoYeon Kim](https://github.com/electronicguy97) - Team Leader
@@ -7,22 +22,8 @@
 - [Chaewook Lee](https://github.com/leecw12)
 - [HaNeul Pyeon](https://github.com/Haneul1002)
 
-### PROJECT
-We started with 500,000 pieces of data.<br>
-It has 7 classes: happy, anger, anxiety, embarrass, normal, pain, and sad.<br>
-As preprocessing, we reduced the number of data or used YOLOv8 to crop only the faces. Cropped photos to reduce storage capacity to use less GPU<br>
-Repvgg and VIT (Vision Transformer, YOLO) were used as 2-stage models, and YOLO was used as 1-stage model.<br>
-We have implemented many functions using Streamlit, so please check it out.<br>
-
-![image](https://github.com/electronicguy97/est_wassup_03/assets/103613730/41417652-dea9-4123-a3d9-5332af6f4bc6)
-
-### USED
-GPU server : 4GPU A-100s(AWS)
-OS : Linux
-Language : Python
-
-### experiment report
-|experiment report|presentation|
+### Experiment Report
+|Experiment Report|Presentation Materials|
 |---|---|
 |[결과 보고서.pdf](https://github.com/electronicguy97/est_wassup_03/files/14435573/default.pdf)||
 |[결과 보고서.docx](https://github.com/electronicguy97/est_wassup_03/files/14435574/default.docx)||
@@ -67,6 +68,9 @@ python eval.py --data-dir {your_test_folder_path} -mp {your_model_path} -mn {Rep
 We used f1, R2, Precision, and recall as metrics.
 
 ### result
+
+![image](https://github.com/electronicguy97/est_wassup_03/assets/103613730/ae6e255c-3d7f-4323-8486-b8ed2c56094d)
+
 ||YOLO(1Stage)|YOLO(2Stage)|ReppVgg|VIT|
 |---|---|---|---|---|
 |val_loss|0.233|0.533|1.470|1.251|
@@ -80,3 +84,6 @@ We used f1, R2, Precision, and recall as metrics.
 
 
 <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white"> <img src = "https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+<a href="https://code.visualstudio.com/" onClick=""><img src="https://img.shields.io/badge/VSC-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/></a>
+<a href="https://www.linux.org/" onClick=""><img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=Linux&logoColor=white"/></a>
+<a href="https://git-scm.com/" onClick=""><img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white"/></a>
