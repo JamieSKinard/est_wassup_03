@@ -70,22 +70,6 @@ python eval.py --data-dir {your_test_folder_path} -mp {your_model_path} -mn {Rep
 We used f1, R2, Precision, and recall as metrics.
 
 ### result
-||YOLO(1Stage)|YOLO(2Stage)|ReppVgg|VIT|
-|---|---|---|---|---|
-|val_loss|0.233|0.533|1.470|1.251|
-|train_acc|||78.3%|72.2%|
-|val_acc||73.9%|68.7%|62.5%|
-
-Preprocessing is possible with box_labeling_yolov8.ipynb in the folder called preprocess.<br>
-and Go to the file named YOLO.ipynb and Just Shift + F5
-
-### How to evaluation
-```bash
-python eval.py --data-dir {your_test_folder_path} -mp {your_model_path} -mn {Repvgg, VIT}
-```
-We used f1, R2, Precision, and recall as metrics.
-
-### result
 
 ![image](https://github.com/electronicguy97/est_wassup_03/assets/103613730/ae6e255c-3d7f-4323-8486-b8ed2c56094d)
 
@@ -99,6 +83,8 @@ We used f1, R2, Precision, and recall as metrics.
 
 ![image](https://github.com/JamieSKinard/est_wassup_03/assets/103613730/028820b2-4d97-4a71-a405-96affe3465eb)
 ![image](https://github.com/JamieSKinard/est_wassup_03/assets/103613730/3a7145fb-6e0c-4cc2-880c-9da0bf5c71f9)
+
+
 
 <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white"> <img src = "https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
 <a href="https://code.visualstudio.com/" onClick=""><img src="https://img.shields.io/badge/VSC-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/></a>
