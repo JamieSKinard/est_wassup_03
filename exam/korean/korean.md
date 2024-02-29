@@ -76,6 +76,10 @@ test 할 때 사용할 데이터 경로 설정 후 학습 시켰던 모델과 �
 |train_acc|||78.3%|72.2%|
 |val_acc||73.9%|68.7%|62.5%|
 
+### 예시(마스크 착용)
+
+![image](https://github.com/JamieSKinard/est_wassup_03/assets/103613730/028820b2-4d97-4a71-a405-96affe3465eb)
+![image](https://github.com/JamieSKinard/est_wassup_03/assets/103613730/3a7145fb-6e0c-4cc2-880c-9da0bf5c71f9)
 
 <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=PyTorch&logoColor=white"> <img src = "https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
 <a href="https://code.visualstudio.com/" onClick=""><img src="https://img.shields.io/badge/VSC-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/></a>
